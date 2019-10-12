@@ -15,11 +15,6 @@ public class CidadeServiceImpl implements CidadeService {
 	private CidadeRepository cidades;
 
 	@Override
-	public Optional<Cidade> buscar(Integer id) {
-		return cidades.findById(id);
-	}
-
-	@Override
 	public Iterable<Cidade> pesquisar() {
 		return cidades.findAll();
 	}
