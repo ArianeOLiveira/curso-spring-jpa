@@ -9,10 +9,15 @@ import br.com.codenation.comercio.model.Cidade;
 import br.com.codenation.comercio.repository.CidadeRepository;
 
 @Service
-public class CidadeServiceImpl implements CidadeService {
+final class CidadeServiceImpl implements CidadeService {
+
+	private final CidadeRepository cidades;
 
 	@Autowired
-	private CidadeRepository cidades;
+	CidadeServiceImpl(CidadeRepository repository) {
+		this.cidades = repository;
+	}
+	
 
 	@Override
 	public Iterable<Cidade> pesquisar() {
