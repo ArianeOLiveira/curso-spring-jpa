@@ -7,6 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 @Entity
 public class Cliente {
@@ -17,8 +21,16 @@ public class Cliente {
 	
 	private String nome;
 	private String endereco;
+
+	@Pattern(regexp = "^[0-9]{5}-[0-9]{3}$")
 	private Integer cep;
 	private LocalDate cadastro;
+	
+	@Email(message="E-mail inválido!")
+	private String email;
+	
+	@CPF(message = "CPF inválido!")
+	private String cpf;
 	
 	@ManyToOne
 	private Cidade cidade;
@@ -69,6 +81,22 @@ public class Cliente {
 
 	public void setCidade(Cidade cidade) {
 		this.cidade = cidade;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 	
 }

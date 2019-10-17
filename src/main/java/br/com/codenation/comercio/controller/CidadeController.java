@@ -2,6 +2,8 @@ package br.com.codenation.comercio.controller;
 
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +35,7 @@ public class CidadeController {
 	}
 
 	@PostMapping
-	public Cidade salvar(@RequestBody Cidade cidade) {
+	public Cidade salvar(@Valid @RequestBody Cidade cidade) {
 		return cidades.salvar(cidade);
 	}
 
@@ -43,7 +45,7 @@ public class CidadeController {
 	}
 	
 	@PutMapping
-	public void alterar(@RequestBody Cidade cidade) {
+	public void alterar(@Valid @RequestBody Cidade cidade) {
 		cidades.alterar(cidade);
 	}
 
