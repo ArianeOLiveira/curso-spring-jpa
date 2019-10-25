@@ -9,7 +9,7 @@ import br.com.codenation.comercio.model.Cidade;
 import br.com.codenation.comercio.repository.CidadeRepository;
 
 @Service
-final class CidadeServiceImpl implements CidadeService {
+public class CidadeServiceImpl implements CidadeService {
 
 	private final CidadeRepository cidades;
 
@@ -17,7 +17,11 @@ final class CidadeServiceImpl implements CidadeService {
 	CidadeServiceImpl(CidadeRepository repository) {
 		this.cidades = repository;
 	}
-	
+
+	@Override
+	public Optional<Cidade> buscar(Integer id) {
+		return cidades.findById(id);
+	}
 
 	@Override
 	public Iterable<Cidade> pesquisar() {

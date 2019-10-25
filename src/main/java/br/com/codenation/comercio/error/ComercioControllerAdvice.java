@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 public class ComercioControllerAdvice {
-	
+
 	@ExceptionHandler(RecursoNaoEncontrado.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	@ResponseBody

@@ -1,4 +1,4 @@
-package br.com.codenation.biblioteca;
+package br.com.codenation.comercio;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class BibliotecaApplicationTests {
+public class ComercioApplicationTests {
 
 	@Test
 	public void contextLoads() {

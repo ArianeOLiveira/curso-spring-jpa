@@ -11,15 +11,20 @@ import javax.persistence.PostRemove;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import io.swagger.annotations.ApiModelProperty;
+
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 public class Cidade {
 
+	@ApiModelProperty(value = "Código da cidade")
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codigo;
+	
+	@ApiModelProperty(value = "Nome da cidade")
 	private String nome;
-
+	
 	@ManyToOne
 	private Estado estado;
 

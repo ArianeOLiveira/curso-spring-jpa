@@ -8,6 +8,8 @@ import javax.persistence.ManyToOne;
 @Embeddable
 public class ItemPedidoId implements Serializable {
 
+	private static final long serialVersionUID = 7123396116706325414L;
+
 	@ManyToOne
     private Pedido pedido;
 
